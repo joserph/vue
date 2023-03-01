@@ -8,16 +8,31 @@
 </head>
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <div id="app">{{ text }}</div>
+    <div id="app"></div>
     <script>
         const vm = Vue.createApp({
             data(){
                 return {
-                    text: "Hola Vue"
+                    text: "<p>Hola Vue3</p>"
                 };
-            }
+            },
+            template: `<div v-once v-html="text"></div>`
         }).mount('#app');
         console.log(vm)
     </script>
+    <!---
+        1- QUE ES VUE
+        2- FUNDAMENTOS DE COMPONENTES
+        3- CONFIGURACION DEL ENTORNO
+        4- PRIMER CONTACTO
+        5- INTERPOLACION DE DATOS
+        6- INTERPOLACION DE DATOS 2
+            A- V-ONCE SOLO PERMITE LA RENDERIZADION UNA SOLA VEZ, QUITA LA REACTIVIDAD.
+            B- V-TEXT REEMPLAZA LA DECLARACION MEDIANTE LLAVES {{  }} MEDIANTE TEXTO
+            C- V-HTML RENDERIZA CODIGO HTML
+            
+
+
+    -->
 </body>
 </html>
