@@ -8,20 +8,21 @@
 </head>
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <div id="app">
-        
-    </div>
+    <div id="app"></div>
     <script>
         const vm = Vue.createApp({
             data(){
                 return {
-                    attr: "src",
-                    img: "https://cdn.pixabay.com/photo/2023/03/09/14/46/bananas-7840213_1280.jpg"
+                    counter: 0
                 };
             },
-            template: `<img v-bind:[attr]="img" >`
+            methods: {
+                submit() {
+                    this.counter++
+                }
+            },
+            template: `<form v-on:submit.prevent="submit"><button>{{ counter }}</button></form>`
         }).mount('#app');
-        console.log(vm)
     </script>
     <!---
         1- QUE ES VUE
