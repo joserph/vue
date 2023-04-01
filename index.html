@@ -13,30 +13,16 @@
         const vm = Vue.createApp({
             data(){
                 return {
-                    counter: 0
+                    text: "Hola Vue"
                 };
             },
-            methods: {
-                submit() {
-                    this.counter++
-                }
-            },
-            template: `<form v-on:submit.prevent="submit"><button>{{ counter }}</button></form>`
+            
+            template: `
+                <p>{{ text }}</p>
+                <input type="text" v-model="text" />
+            `
         }).mount('#app');
     </script>
-    <!---
-        1- QUE ES VUE
-        2- FUNDAMENTOS DE COMPONENTES
-        3- CONFIGURACION DEL ENTORNO
-        4- PRIMER CONTACTO
-        5- INTERPOLACION DE DATOS
-        6- INTERPOLACION DE DATOS 2
-            A- V-ONCE SOLO PERMITE LA RENDERIZADION UNA SOLA VEZ, QUITA LA REACTIVIDAD.
-            B- V-TEXT REEMPLAZA LA DECLARACION MEDIANTE LLAVES {{  }} MEDIANTE TEXTO
-            C- V-HTML RENDERIZA CODIGO HTML
-            
-
-
-    -->
+    
 </body>
 </html>
